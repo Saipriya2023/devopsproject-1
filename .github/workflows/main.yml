@@ -13,8 +13,7 @@ jobs:
 
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --follow-symlinks --delete
-          source_dir: .  # Specify the source directory here
+          args: --acl public-read --follow-symlinks --delete .  # Source directory specified directly here
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
